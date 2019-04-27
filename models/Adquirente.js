@@ -14,7 +14,8 @@ module.exports = class Adquirente {
         if (t == undefined) {
             throw new Error("Bandeira inválida.");
         } else { 
-            return parseFloat((valor * (1 - t[tipo] / 100)).toFixed(2));
+            let taxa = 1 - (t[tipo] / 100);
+            return parseFloat((valor * taxa).toFixed(2));
         }        
     }
 }
